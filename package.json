@@ -6,15 +6,15 @@
     "app/*"
   ],
   "scripts": {
+    "start": "yarn react-native start",
     "android": "yarn react-native run-android",
-    "build": "./scripts/build.sh",
-    "graphql": "node ./scripts/getSchema.js",
     "ios": "yarn react-native run-ios",
+    "release": "sh ./scripts/release.sh",
+    "test": "node node_modules/jest/bin/jest.js --config=.jest.json",
+    "test-ci": "sh ./scripts/test.sh",
+    "graphql": "node ./scripts/getSchema.js",
     "lint": "yarn eslint app --report-unused-disable-directives",
     "relay": "yarn babel-node ./app/relay/scripts/RelayCompiler.js --src ./app --schema ./schema.graphql",
-    "start": "yarn react-native start",
-    "test": "node node_modules/jest/bin/jest.js --config=.jest.json",
-    "test-ci": "./scripts/test.sh",
     "postinstall": "node ./scripts/configureApplication.js"
   },
   "dependencies": {
